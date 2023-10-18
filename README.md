@@ -1,46 +1,14 @@
-# Getting Started with Create React App
+# React + TypeScript + TailwindCSS + Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. 기능 추가할 때 마다 git에 commit하는 습관
+2. 검색 능력 + 공식문서 보는 능력 향상
+3. 컴포넌트화를 잘하여 유지보수하기 쉽게
+4. 디자인은 스스로 기능은 필수
+5. 모르거나 궁금하거나 추가하고싶은 기능은 서로 공유
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+메인페이지 : 리스트(내용), 작성날짜, 생성버튼, 체크박스, 다크모드
+리스트 : 라이브러리 이용해 끌어서 이동하는 기능 추가해보기
+생성 : 생성버튼 눌렀을 때 -> 모달로 나오고 내용 입력 박스
+수정 : 디테일에서 수정버튼 눌렀을 때 -> 모달로 나오고 내용 입력되어있는 박스
+삭제 : 리스트에 삭제버튼 만들고 누르면 삭제  
+완료 : 리스트에 체크박스 누르면 회색으로 변경되면서 가운데 줄 그어지기
