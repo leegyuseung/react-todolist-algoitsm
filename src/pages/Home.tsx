@@ -42,7 +42,7 @@ export default function Home() {
     <div className="">
       <div className="">
         <HeaderDate dateData={dateData} ChangeDate={ChangeDate} />
-        {todoData && (
+        {todoList && (
           <ul>
             {todoList.map((data) => {
               return <li key={data.index}>{data.content}</li>;
