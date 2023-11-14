@@ -39,13 +39,25 @@ export default function Home() {
   }, [dateData, todoData]);
 
   return (
-    <div className="">
-      <div className="">
+    <div className="flex flex-col justify-items-center items-center mt-20">
+      <div>
         <HeaderDate dateData={dateData} ChangeDate={ChangeDate} />
+      </div>
+      <div className="mt-8">
+        <span className="text-2xl">- 리스트 -</span>
+      </div>
+      <div className="mt-4">
         {todoList && (
           <ul>
             {todoList.map((data) => {
-              return <li key={data.index}>{data.content}</li>;
+              return (
+                <li
+                  className="border-2 border-black/50 mb-0.5 rounded-md w-96"
+                  key={data.index}
+                >
+                  <span className="text-xs">{data.content}</span>
+                </li>
+              );
             })}
           </ul>
         )}

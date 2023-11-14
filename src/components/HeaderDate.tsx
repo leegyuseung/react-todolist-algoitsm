@@ -32,13 +32,13 @@ const HeaderDate = (props: HeaderDateType) => {
   };
 
   return (
-    <div className="flex flex-nowrap">
-      <div>
-        <Button buttonText={"<"} clickEvent={BeforeClick} />
+    <div className="flex text-5xl font-bold">
+      <div className="mr-8">
+        <Button buttonText={"◀️"} clickEvent={BeforeClick} />
       </div>
       {Text}
-      <div>
-        <Button buttonText={">"} clickEvent={afterClick} />
+      <div className="ml-8">
+        <Button buttonText={"▶️"} clickEvent={afterClick} />
       </div>
     </div>
   );
