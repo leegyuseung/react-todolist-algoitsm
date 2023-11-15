@@ -55,7 +55,7 @@ export default function Home() {
                   className="border-2 border-black/50 mb-0.5 rounded-md w-96"
                   key={data.index}
                 >
-                  <span className="text-xs">{data.content}</span>
+                  <span className="text-xs ml-1">{data.content}</span>
                 </li>
               );
             })}
