@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
 import HeaderDate from "../components/HeaderDate";
+import Button from "../components/Button";
 
 export default function Home() {
   const todoData = useSelector((state: RootState) => state.data);
@@ -43,8 +44,14 @@ export default function Home() {
       <div>
         <HeaderDate dateData={dateData} ChangeDate={ChangeDate} />
       </div>
-      <div className="mt-8">
-        <span className="text-2xl">- 리스트 -</span>
+      <div className="w-96 pt-8 flex flex-row items-center justify-around">
+        <div></div>
+        <div>
+          <span className="text-2xl">- 리스트 -</span>
+        </div>
+        <div>
+          <Button buttonClass="text-2xl" buttonText="+" clickEvent={() => {}} />
+        </div>
       </div>
       <div className="mt-4">
         {todoList && (
