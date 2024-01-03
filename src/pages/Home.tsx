@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-items-center items-center mt-20">
+      <div className="w-full h-full flex flex-col justify-items-center items-center mt-20">
         <div>
           <HeaderDate dateData={dateData} ChangeDate={ChangeDate} />
         </div>
