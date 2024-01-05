@@ -12,8 +12,14 @@ export default function Home() {
   const [todoList, setTodoList] = useState(todoData); // 투두리스트데이터 상태
   const [modalOpen, setModalOpen] = useState(false);
 
+  // 버튼 눌러서 추가 모달 오픈
   const OpenAddTodoList = () => {
     setModalOpen(true);
+  };
+
+  // 모달 닫기
+  const modalClose = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (e.target === e.currentTarget) setModalOpen(false);
   };
 
   // 월을 바꾸면 실행되는 함수
@@ -47,7 +53,12 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full h-full flex flex-col justify-items-center items-center mt-20">
+      <div
+        className={[
+          "w-full h-full flex flex-col justify-items-center items-center mt-20",
+          modalOpen ? "blur" : "",
+        ].join(" ")}
+      >
         <div>
           <HeaderDate dateData={dateData} ChangeDate={ChangeDate} />
         </div>
@@ -81,7 +92,16 @@ export default function Home() {
           )}
         </div>
       </div>
-      {modalOpen && <Modal />}
+      {modalOpen && (
+        <div
+          className="fixed top-0 right-0 bottom-0 left-0 flex h-full w-full justify-center items-center "
+          onClick={(e) => {
+            modalClose(e);
+          }}
+        >
+          <Modal setModalOpen={setModalOpen} />
+        </div>
+      )}
     </>
   );
 }

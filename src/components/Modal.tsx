@@ -1,24 +1,46 @@
+import { useState } from "react";
 import Button from "./Button";
 
-export default function Modal() {
-  const ButtonClick = () => {};
+interface ModalType {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Modal(props: ModalType) {
+  const [Text, setText] = useState("");
+  // 추가버튼 이벤트
+  const ButtonAddClick = () => {
+    if (Text === "") {
+      alert("할 일을 작성해 주세요");
+      return;
+    }
+    props.setModalOpen(false);
+  };
+
+  // 닫기버튼 이벤트
+  const ButtonCloseClick = () => {
+    props.setModalOpen(false);
+  };
 
   return (
-    <div className="fixed top-0 right-0 bottom-0 left-0 flex h-full w-full border-2 justify-center items-center ">
-      <div className="relative bg-white rounded-lg shadow-2xl ">
-        <div>
-          <input
-            name="content"
-            id="content"
-            type="text"
-            className="border-2 border-black outline-none rounded-md shadow-xl w-64"
-          />
-          <Button
-            buttonClass="text-base ml-2 border-2 border-black rounded-md"
-            buttonText="추가"
-            clickEvent={ButtonClick}
-          />
-        </div>
+    <div id="modal" className="relative bg-white rounded-lg shadow-2xl ">
+      <div>
+        <input
+          name="content"
+          id="content"
+          type="text"
+          className="border-2 border-black outline-none rounded-md shadow-xl w-64"
+          onChange={(e) => setText(e.target.value)}
+        />
+        <Button
+          buttonClass="text-base ml-2 border-2 border-black rounded-md"
+          buttonText="추가"
+          clickEvent={ButtonAddClick}
+        />
+        <Button
+          buttonClass="text-base ml-2 border-2 border-black rounded-md"
+          buttonText="닫기"
+          clickEvent={ButtonCloseClick}
+        />
       </div>
     </div>
   );
