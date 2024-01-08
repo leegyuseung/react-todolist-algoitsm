@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface DataType {
+export interface DataType {
   content: string;
   index: number;
   complete: boolean;
