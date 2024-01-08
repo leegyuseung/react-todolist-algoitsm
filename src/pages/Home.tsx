@@ -87,7 +87,7 @@ export default function Home() {
             modalClose(e);
           }}
         >
-          <Modal setModalOpen={setModalOpen} />
+          <Modal setModalOpen={setModalOpen} todoData={todoData} />
         </div>
       )}
     </>

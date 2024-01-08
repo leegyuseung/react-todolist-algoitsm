@@ -1,17 +1,36 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { DataType, dataAction } from "../redux/data-slice";
 
 interface ModalType {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  todoData: DataType[];
 }
 
 export default function Modal(props: ModalType) {
+  const dispatch = useDispatch();
+
   const [Text, setText] = useState("");
   // 추가버튼 이벤트
   const ButtonAddClick = () => {
+    let lastIndex = 1;
+    if (props.todoData.length > 0) {
+      lastIndex = props.todoData[props.todoData.length - 1]["index"] + 1;
+    }
+
     if (Text === "") {
       alert("할 일을 작성해 주세요");
       return;
+    } else {
+      dispatch(
+        dataAction.CreateData({
+          content: Text,
+          index: lastIndex,
+          complete: false,
+          date: new Date().getTime(),
+        })
+      );
     }
     props.setModalOpen(false);
   };
