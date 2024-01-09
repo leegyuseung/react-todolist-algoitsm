@@ -12,6 +12,10 @@ export default function ItemList(props: ItemListType) {
     dispatch(dataAction.ChangeComplete(e.target.id));
   };
 
+  const deleteTodo = (e: any) => {
+    dispatch(dataAction.DeleteData(e.target.id));
+  };
+
   return (
     <ul>
       {props.todoList.map((data) => {
@@ -39,7 +43,13 @@ export default function ItemList(props: ItemListType) {
                 </span>
               </div>
               <div className="pr-3">
-                <span>🗑️</span>
+                <span
+                  className="cursor-pointer"
+                  id={data.index.toString()}
+                  onClick={deleteTodo}
+                >
+                  🗑️
+                </span>
               </div>
             </div>
           </li>

@@ -30,6 +30,9 @@ const dataSlice = createSlice({
       );
       return state;
     },
+    DeleteData: (state, action) => {
+      return state.filter((data) => data.index.toString() !== action.payload);
+    },
   },
 });
 
